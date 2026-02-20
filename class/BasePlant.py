@@ -26,10 +26,10 @@ class BasePlant():
 
         if(capacity_used < 0):
             capacity_used = 0 # this variable represents a percentage
+        
+        # this class does not do anything i think
         self.max_kwh = max_kwh
         self.min_operative_kwh = min_operative_kwh
         self.price = price
         self.maintain_cost = maintain_cost
-
-    pass
 
