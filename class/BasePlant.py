@@ -2,7 +2,7 @@ class BasePlant():
     plant_id = 0
     
     def __init__(self, max_kwh: int, min_operative_kwh: int, 
-    price: int, maintain_cost: int, ramp_rate: float, capacity_used: float,
+    price: int, maintain_cost: int, ramp_rate: float, kwh_used: int,
     plant_type: int):
 
         if(min_operative_kwh > max_kwh):
@@ -26,8 +26,8 @@ class BasePlant():
         if(ramp_rate < 1):
             ramp_rate = 1 # i do not how to use this variable yet so, that's it
 
-        if(capacity_used < 0):
-            capacity_used = 0 # this variable represents a percentage
+        if(kwh_used < 0):
+            kwh_used = 0
         
 
         # this class does not do anything i think
