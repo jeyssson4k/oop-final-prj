@@ -13,6 +13,8 @@ class CoalPlantParams(Enum):
     MIN_OPERATIVE_KWH = 10e3
     MAINTAIN_COST = 7e3
     MAINTAIN_DAYS_RATIO = 3
+    TYPE = "COAL"
+    RAMP_RATE = 1
 
 class GasTurbineParams(Enum):
     PRICE = 1.35e3
@@ -20,6 +22,8 @@ class GasTurbineParams(Enum):
     MIN_OPERATIVE_KWH = 28e3
     MAINTAIN_COST = 7.75e3
     MAINTAIN_DAYS_RATIO = 3
+    TYPE = "GAS TURBINE"
+    RAMP_RATE = 1
 
 class SolarFarmParams(Enum):
     PRICE = 1.9e4
@@ -27,6 +31,8 @@ class SolarFarmParams(Enum):
     MIN_OPERATIVE_KWH = 0.1e3
     MAINTAIN_COST = 1.38e3
     MAINTAIN_DAYS_RATIO = 1
+    TYPE = "SOLAR FARM"
+    RAMP_RATE = 1
 
 class HydroPlantParams(Enum):
     PRICE = 1e9
@@ -34,6 +40,8 @@ class HydroPlantParams(Enum):
     MIN_OPERATIVE_KWH = 50e3
     MAINTAIN_COST = 1e4
     MAINTAIN_DAYS_RATIO = 7
+    TYPE = "HYDRO"
+    RAMP_RATE = 1
 
 class WindTurbineParams(Enum):
     PRICE = 0.9e4
@@ -41,6 +49,8 @@ class WindTurbineParams(Enum):
     MIN_OPERATIVE_KWH = 0
     MAINTAIN_COST = 0.8e3
     MAINTAIN_DAYS_RATIO = 1
+    TYPE = "WIND TURBINE"
+    RAMP_RATE = 1
 
 class NuclearPlantParams(Enum):
     PRICE = 1.7e12
@@ -48,3 +58,5 @@ class NuclearPlantParams(Enum):
     MIN_OPERATIVE_KWH = 8e4
     MAINTAIN_COST = 8e5
     MAINTAIN_DAYS_RATIO = 20
+    TYPE = "NUCLEAR"
+    RAMP_RATE = 1

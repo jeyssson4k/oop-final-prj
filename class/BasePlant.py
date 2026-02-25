@@ -1,10 +1,17 @@
 class BasePlant():
     plant_id = 0
-    
-    def __init__(self, max_kwh: int, min_operative_kwh: int, 
-    price: int, maintain_cost: int, ramp_rate: float, kwh_used: int,
-    plant_type: int):
-
+    # I think it's a better option to initialize using Params Classes but anyways
+    def __init__(self, params: Enum):
+        properties = vars(params)
+        
+        plant_type = properties.get("TYPE")
+        if plant_type is None:
+            print("Warning: This plant could not be created")
+            return None
+        
+        # param assignement
+        min_operative_kwh = properties.get("MIN_OPERATIVE_KWH", 1)
+        max_kwh = properties.get("MAX_KWH", 100)
         if(min_operative_kwh > max_kwh):
             min_operative_kwh = max_kwh + min_operative_kwh
             max_kwh = min_operative_kwh - max_kwh
