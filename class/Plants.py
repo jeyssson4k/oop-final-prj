@@ -3,7 +3,7 @@ from BasePlant import BasePlant
 class Coalplant(BasePlant):
     pass
 
-class GasTurbine(Baseplant):
+class GasTurbine(BasePlant):
     pass
 
 class SolarFarm(BasePlant):
