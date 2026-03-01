@@ -16,7 +16,7 @@ class CoalPlantParams(Enum):
     MAINTAIN_COST = 7e3
     MAINTAIN_DAYS_RATIO = 3
     TYPE = "COAL"
-    RAMP_RATE = 1
+    RAMP_RATE = 4
 
 class GasTurbineParams(Enum):
     PRICE = 1.35e3
