@@ -10,7 +10,7 @@ from enum import Enum
 ## ramp_rate means how many steps are needed to make 
 ## a change in the current capacity used by the plant
 class CoalPlantParams(Enum):
-    PRICE = 100_000
+    PRICE = 150_000
     MAX_KWH = 100_000
     MIN_OPERATIVE_KWH = 10_000
     MAINTAIN_COST = 7_000
@@ -62,3 +62,12 @@ class NuclearPlantParams(Enum):
     MAINTAIN_DAYS_RATIO = 20
     TYPE = "NUCLEAR"
     RAMP_RATE = 3
+
+class BatteryParams(Enum):
+    PRICE = 80_000
+    MAX_KWH = 10_000
+    MIN_OPERATIVE_KWH = 10_000
+    MAINTAIN_COST = 500
+    MAINTAIN_DAYS_RATIO = 0
+    TYPE = "BATTERY"
+    RAMP_RATE = 1
