@@ -10,55 +10,55 @@ from enum import Enum
 ## ramp_rate means how many steps are needed to make 
 ## a change in the current capacity used by the plant
 class CoalPlantParams(Enum):
-    PRICE = 1e6
-    MAX_KWH = 100e3
-    MIN_OPERATIVE_KWH = 10e3
-    MAINTAIN_COST = 7e3
-    MAINTAIN_DAYS_RATIO = 3
+    PRICE = 100_000
+    MAX_KWH = 100_000
+    MIN_OPERATIVE_KWH = 10_000
+    MAINTAIN_COST = 7_000
+    MAINTAIN_DAYS_RATIO = 10
     TYPE = "COAL"
     RAMP_RATE = 4
 
 class GasTurbineParams(Enum):
-    PRICE = 1.35e3
-    MAX_KWH = 140e3
-    MIN_OPERATIVE_KWH = 28e3
-    MAINTAIN_COST = 7.75e3
-    MAINTAIN_DAYS_RATIO = 3
+    PRICE = 135_000
+    MAX_KWH = 140_000
+    MIN_OPERATIVE_KWH = 28_000
+    MAINTAIN_COST = 7_750
+    MAINTAIN_DAYS_RATIO = 15
     TYPE = "GAS TURBINE"
-    RAMP_RATE = 1
+    RAMP_RATE = 6
 
 class SolarFarmParams(Enum):
-    PRICE = 1.9e4
-    MAX_KWH = 80e3
-    MIN_OPERATIVE_KWH = 0.1e3
-    MAINTAIN_COST = 1.38e3
-    MAINTAIN_DAYS_RATIO = 1
+    PRICE = 190_000
+    MAX_KWH = 80_000
+    MIN_OPERATIVE_KWH = 1_000
+    MAINTAIN_COST = 1_380
+    MAINTAIN_DAYS_RATIO = 7
     TYPE = "SOLAR FARM"
     RAMP_RATE = 1
 
 class HydroPlantParams(Enum):
-    PRICE = 1e9
-    MAX_KWH = 2e7
-    MIN_OPERATIVE_KWH = 50e3
-    MAINTAIN_COST = 1e4
-    MAINTAIN_DAYS_RATIO = 7
+    PRICE = 7_000_000
+    MAX_KWH = 2_000_000
+    MIN_OPERATIVE_KWH = 50_000
+    MAINTAIN_COST = 10_000
+    MAINTAIN_DAYS_RATIO = 30
     TYPE = "HYDRO"
-    RAMP_RATE = 1
+    RAMP_RATE = 3
 
 class WindTurbineParams(Enum):
-    PRICE = 0.9e4
-    MAX_KWH = 10e3
+    PRICE = 90_000
+    MAX_KWH = 10_000
     MIN_OPERATIVE_KWH = 0
-    MAINTAIN_COST = 0.8e3
-    MAINTAIN_DAYS_RATIO = 1
+    MAINTAIN_COST = 800
+    MAINTAIN_DAYS_RATIO = 3
     TYPE = "WIND TURBINE"
-    RAMP_RATE = 1
+    RAMP_RATE = 2
 
 class NuclearPlantParams(Enum):
-    PRICE = 1.7e12
-    MAX_KWH = 9e9
-    MIN_OPERATIVE_KWH = 8e4
-    MAINTAIN_COST = 8e5
+    PRICE = 17_000_000
+    MAX_KWH = 9_000_000
+    MIN_OPERATIVE_KWH = 80_000
+    MAINTAIN_COST = 80_000
     MAINTAIN_DAYS_RATIO = 20
     TYPE = "NUCLEAR"
-    RAMP_RATE = 1
+    RAMP_RATE = 3
