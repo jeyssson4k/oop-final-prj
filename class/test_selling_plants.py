@@ -14,7 +14,13 @@ user = User()
 plant0 = Coalplant(CoalPlantParams)
 user.plants.append(plant0)
 print(BasePlant.plant_id)
+print(len(Store.available_plants))
 Store.sell_plant(user, BasePlant.plant_id-1)
+print(user.plants)
+print(user.balance)
+
+Store.buy_plant(user, "COAL")
+print(Store.available_plants)
 print(user.plants)
 print(user.balance)
 

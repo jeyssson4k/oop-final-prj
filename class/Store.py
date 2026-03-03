@@ -23,7 +23,11 @@ class Store:
     }
 
     PLANT_PRICES = {
-        "COAL": 560_000
+        "COAL": 94_000,
+        "GAS TURBINE": 86_000,
+        "SOLAR FARM": 110_000,
+        "HYDRO": 5_900_000,
+        "WIND TURBINE": 48_000,
     }
 
     @staticmethod
@@ -61,11 +65,19 @@ class Store:
                 print(f"Info: {pl.type} plant with id {pl.id} will be sold at ${Store.PLANT_PRICES[pl.type]}")
                 user.plants = [item for item in user.plants if item.id != plant_id]
                 user.balance += Store.PLANT_PRICES[pl.type]
+    
+    @staticmethod
+    def buy_plant(user: User, type):
+        if type not in Store.PLANT_PRICES.keys():
+            print(f"Warning: the type {type} does not exist.")
+            return
 
-        # user wants to sell one of their plants
+        for pl in Store.available_plants:
+            if type == pl.type:
+                print(f"Info: you acquired a {type} plant!")
+                user.balance -= pl.price
+                user.plants.append(pl)
+                available_plants = [item for item in Store.available_plants if item.type != type]
+                return
 
-        pass
-
-    def buy_plant():
-        # user wants to buy one of the Store's plants
-        pass
+        print(f"Warning: there is no {type} plant available.")
