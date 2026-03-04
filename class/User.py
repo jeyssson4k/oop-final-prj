@@ -1,7 +1,7 @@
 # controls user's balance, plants and user's response when demand changes
 class User:
-    def __init__(self):
-        self.balance = 1_000_000
+    def __init__(self, balance: int = 300_000):
+        self.balance = balance
         self.plants = []
         self.current_power = 0 # there is no plants yet 
         self.max_power = 0 # there is no max kwh because there is no plants yet
