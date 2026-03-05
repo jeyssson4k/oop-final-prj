@@ -1,6 +1,5 @@
 from GameManager import GameManager
 
-
 def main_menu():
     print(f"********************")
     print(f"*Power Grid Master!*")
@@ -31,6 +30,8 @@ def select_difficulty():
     print('Enter your option [1-5]:')
     return int(input())
 
+def start_day():
+    pass
 difficulties = ["EASY", "NORMAL", "HARD", "INSANE", "ADMIN"]
 while(True):
     # let's play !
@@ -42,6 +43,9 @@ while(True):
     difficulty = select_difficulty()
     if difficulty < 1 or difficulty > 5:
         difficulty = 2
-    game_manager = GameManager(difficulties[difficulty-1])
+    
+    game_manager = GameManager(difficulties[difficulty-1], difficulty)
+    game_manager.update_demand()
+    game_manager.info_step()
 
 
