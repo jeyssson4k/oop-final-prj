@@ -67,17 +67,19 @@ class Store:
                 user.balance += Store.PLANT_PRICES[pl.type]
     
     @staticmethod
-    def buy_plant(user: User, type):
-        if type not in Store.PLANT_PRICES.keys():
-            print(f"Warning: the type {type} does not exist.")
+    def buy_plant(user: User, id):
+        if id not in [pl.id for pl in Store.available_plants]:
+            print(f"Warning: This id does not exist.")
             return
 
         for pl in Store.available_plants:
-            if type == pl.type:
-                print(f"Info: you acquired a {type} plant!")
-                user.balance -= pl.price
-                user.plants.append(pl)
-                available_plants = [item for item in Store.available_plants if item.type != type]
-                return
-
-        print(f"Warning: there is no {type} plant available.")
+            if id == pl.id:
+                if user.balance >= pl.price:
+                    print(f"Info: you acquired a {pl.type} plant!")
+                    user.balance -= pl.price
+                    user.plants.append(pl)
+                    available_plants = [item for item in Store.available_plants if item.type != type]
+                    return
+                else:
+                    print(f"Warning: you do not have enough balance to do this transaction")
+                    return
